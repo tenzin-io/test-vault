@@ -34,7 +34,7 @@ jobs:
         with:
           url: https://vault.tenzin.io
           role: actions
-          method: jwt_github
+          method: jwt
           secrets: |
               secret/super_secret secret_phrase | SECRET_PHRASE ;
 
