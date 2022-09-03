@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: Testing vault
 
 # Controls when the workflow will run
 on:
@@ -34,9 +34,9 @@ jobs:
         with:
           url: https://vault.tenzin.io
           method: jwt
-          role: actions
+          role: test-vault
           secrets: |
-              secret/data/super_secret secret_phrase | SECRET_PHRASE ;
+              secret/data/mysecret secret_one | SECRET_ONE ;
 
       - name: Sensitive Operation
-        run: "echo '${{ steps.secrets.outputs.SECRET_PHRASE }}'"
+        run: "echo '${{ steps.secrets.outputs.SECRET_ONE }}'"
