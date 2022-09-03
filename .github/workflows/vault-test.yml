@@ -36,7 +36,7 @@ jobs:
           role: actions
           method: jwt
           secrets: |
-              secret/super_secret secret_phrase | SECRET_PHRASE ;
+              secret/data/super_secret secret_phrase | SECRET_PHRASE ;
 
       - name: Sensitive Operation
         run: "echo '${{ steps.secrets.outputs.SECRET_PHRASE }}'"
