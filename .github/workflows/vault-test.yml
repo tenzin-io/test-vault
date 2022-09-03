@@ -33,9 +33,8 @@ jobs:
         id: secrets
         with:
           url: https://vault.tenzin.io
-          method: approle
-          roleId: ${{ secrets.ROLE_ID }}
-          secretId: ${{ secrets.SECRET_ID }}
+          method: jwt
+          role: actions
           secrets: |
               secret/data/super_secret secret_phrase | SECRET_PHRASE ;
 
