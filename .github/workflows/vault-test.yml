@@ -35,9 +35,8 @@ jobs:
           url: https://vault.tenzin.io
           role: actions
           method: jwt
-          jwtGithubAudience: sigstore # set the GitHub token's aud claim
           secrets: |
-              secrets/super_secret secret_phrase | SECRET_PHRASE ;
+              secret/super_secret secret_phrase | SECRET_PHRASE ;
 
       - name: Sensitive Operation
         run: "echo '${{ steps.secrets.outputs.SECRET_PHRASE }}'"
