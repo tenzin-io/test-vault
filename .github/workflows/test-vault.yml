@@ -37,6 +37,10 @@ jobs:
           role: test-vault
           secrets: |
               secret/data/mysecret secret_one | SECRET_ONE ;
+              artifactory/token/github-actions | JF_GITHUB_ACTIONS_TOKEN ;
 
-      - name: Sensitive Operation
+      - name: Read SECRET_ONE
         run: "echo '${{ steps.secrets.outputs.SECRET_ONE }}'"
+        
+      - name: Read JF_GITHUB_ACTIONS_TOKEN
+        run: "echo '${{ steps.secrets.outputs.JF_GITHUB_ACTIONS_TOKEN }}'"
