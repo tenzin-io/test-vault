@@ -33,5 +33,5 @@ jobs:
               secret/data/mysecret secret_one | SECRET_ONE ;
 
       - name: Read SECRET_ONE
-        run: "echo '${{ steps.secrets.outputs.SECRET_ONE }}' >> file1 && cat file1"
+        run: "echo '${{ steps.secrets.outputs.SECRET_ONE }}'"
 
