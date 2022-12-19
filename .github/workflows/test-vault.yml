@@ -34,13 +34,10 @@ jobs:
         with:
           url: https://vault.tenzin.io
           method: jwt
-          role: test-vault
+          role: github-actions-runner-role
           secrets: |
               secret/data/mysecret secret_one | SECRET_ONE ;
-              /artifactory/token/github-actions access_token | JF_GITHUB_ACTIONS_TOKEN ;
 
       - name: Read SECRET_ONE
         run: "echo '${{ steps.secrets.outputs.SECRET_ONE }}'"
-        
-      - name: Read JF_GITHUB_ACTIONS_TOKEN
-        run: "echo '${{ steps.secrets.outputs.JF_GITHUB_ACTIONS_TOKEN }}'"
+
